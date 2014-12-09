@@ -19,6 +19,7 @@
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Reset</string>
+    <string name="help">Help</string>
     <string name="add">Add</string>
     <string name="help">Help</string>
     <string name="attention">Attention</string>
@@ -533,5 +534,11 @@
     <string name="lcd_density_value_format">%d DPI</string>
     <string name="lcd_density_default_value_format">%d DPI (default)</string>
     <string name="restarting_ui">Restarting UI\u2026</string>
+
+    <!-- Lockscreen Shortcuts -->
+    <string name="lockscreen_shortcuts_title">Shortcuts</string>
+    <string name="lockscreen_shortcuts_summary">View or change custom lock screen shortcuts</string>
+    <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
+    <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
 
 </resources>
