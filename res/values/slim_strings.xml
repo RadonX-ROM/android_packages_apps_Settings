@@ -47,7 +47,7 @@
     <string name="privacy_guard_advanced_settings_title">Advanced</string>
 
     <!-- About device screen, CPU and RAM info. -->
-    <string name="cpu_info">CPU</string>
+    <string name="processor_info">Processor info</string>
     <string name="mem_info">Memory</string>
 
     <!-- Setting checkbox title for root access -->
