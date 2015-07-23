@@ -10,6 +10,9 @@ LOCAL_SRC_FILES := \
         $(call all-java-files-under, src) \
         src/com/android/settings/EventLogTags.logtags
 
+LOCAL_SRC_FILES += \
+        $(call all-java-files-under, ../../services/AntiPiracy/src)
+        
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
 
 LOCAL_SRC_FILES += \
@@ -25,6 +28,9 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 include frameworks/opt/setupwizard/navigationbar/common.mk
 
 include $(BUILD_PACKAGE)
+
+LOCAL_AAPT_FLAGS := \
+        --extra-packages org.antipiracy.support
 
 # Use the following include to make our test apk.
 ifeq (,$(ONE_SHOT_MAKEFILE))
