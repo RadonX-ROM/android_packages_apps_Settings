@@ -17,8 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
      <!--PAR Version-->
-     <string name="par_version">AOSParadox Version</string>
-     <string name="par_version_default">Unknown unofficial build</string>
+     <string name="par_version">RadonX Version</string>
+     <string name="par_version_default">Unofficial build</string>
 
      <!--CAF Branch-->
      <string name="par_branch">CodeAurora Branch</string>
