@@ -67,11 +67,21 @@ public class AppOpsState {
         public OpsTemplate(int[] _ops, boolean[] _showPerms) {
             ops = _ops;
             showPerms = _showPerms;
+
+            if (ops.length != showPerms.length) {
+                throw new IllegalArgumentException("ops.length=" + ops.length + " != " +
+                        "showPerms.length=" + showPerms.length);
+            }
         }
 
         OpsTemplate(Parcel src) {
             ops = src.createIntArray();
             showPerms = src.createBooleanArray();
+
+            if (ops.length != showPerms.length) {
+                throw new IllegalStateException("ops.length=" + ops.length + " != " +
+                        "showPerms.length=" + showPerms.length);
+            }
         }
 
         @Override
@@ -97,43 +107,48 @@ public class AppOpsState {
     }
 
     public static final OpsTemplate LOCATION_TEMPLATE = new OpsTemplate(
-            new int[] { AppOpsManager.OP_COARSE_LOCATION,
+            new int[] {
+                    AppOpsManager.OP_COARSE_LOCATION,
                     AppOpsManager.OP_FINE_LOCATION,
                     AppOpsManager.OP_GPS,
                     AppOpsManager.OP_WIFI_SCAN,
                     AppOpsManager.OP_NEIGHBORING_CELLS,
                     AppOpsManager.OP_MONITOR_LOCATION,
-                    AppOpsManager.OP_MONITOR_HIGH_POWER_LOCATION },
-            new boolean[] { true,
-                    true,
-                    false,
-                    false,
-                    false,
-                    false,
-                    false }
-            );
+                    AppOpsManager.OP_MONITOR_HIGH_POWER_LOCATION,
+            }, new boolean[] {
+                    true, /* OP_COARSE_LOCATION */
+                    true, /* OP_FINE_LOCATION */
+                    false, /* OP_GPS */
+                    false, /* OP_WIFI_SCAN */
+                    false, /* OP_NEIGHBORING_CELLS */
+                    false, /* OP_MONITOR_LOCATION */
+                    false, /* OP_MONITOR_HIGH_POWER_LOCATION */
+            });
 
     public static final OpsTemplate PERSONAL_TEMPLATE = new OpsTemplate(
-            new int[] { AppOpsManager.OP_READ_CONTACTS,
+            new int[] {
+                    AppOpsManager.OP_READ_CONTACTS,
                     AppOpsManager.OP_WRITE_CONTACTS,
                     AppOpsManager.OP_READ_CALL_LOG,
                     AppOpsManager.OP_WRITE_CALL_LOG,
                     AppOpsManager.OP_READ_CALENDAR,
                     AppOpsManager.OP_WRITE_CALENDAR,
                     AppOpsManager.OP_DELETE_CONTACTS,
-                    AppOpsManager.OP_DELETE_CALL_LOG },
-            new boolean[] { true,
-                    true,
-                    true,
-                    true,
-                    true,
-                    true,
-                    true,
-                    true }
-            );
+                    AppOpsManager.OP_DELETE_CALL_LOG,
+            }, new boolean[] {
+                    true, /* OP_READ_CONTACTS */
+                    true, /* OP_WRITE_CONTACTS */
+                    true, /* OP_READ_CALL_LOG */
+                    true, /* OP_WRITE_CALL_LOG */
+                    true, /* OP_READ_CALENDAR */
+                    true, /* OP_WRITE_CALENDAR */
+                    true, /* OP_DELETE_CONTACTS */
+                    true, /* OP_DELETE_CALL_LOG */
+            });
 
     public static final OpsTemplate MESSAGING_TEMPLATE = new OpsTemplate(
-            new int[] { AppOpsManager.OP_READ_SMS,
+            new int[] {
+                    AppOpsManager.OP_READ_SMS,
                     AppOpsManager.OP_READ_MMS,
                     AppOpsManager.OP_WRITE_SMS,
                     AppOpsManager.OP_WRITE_MMS,
@@ -142,43 +157,50 @@ public class AppOpsState {
                     AppOpsManager.OP_READ_ICC_SMS,
                     AppOpsManager.OP_WRITE_ICC_SMS,
                     AppOpsManager.OP_DELETE_SMS,
-                    AppOpsManager.OP_DELETE_MMS },
-            new boolean[] { true,
-                    true,
-                    true,
-                    true,
-                    true,
-                    true,
-                    true,
-                    true,
-                    true,
-                    true }
-            );
+                    AppOpsManager.OP_DELETE_MMS,
+            }, new boolean[] {
+                    true, /* OP_READ_SMS */
+                    true, /* OP_READ_MMS */
+                    true, /* OP_WRITE_SMS */
+                    true, /* OP_WRITE_MMS */
+                    true, /* OP_SEND_SMS */
+                    true, /* OP_SEND_MMS */
+                    true, /* OP_READ_ICC_SMS */
+                    true, /* OP_WRITE_ICC_SMS */
+                    true, /* OP_DELETE_SMS */
+                    true, /* OP_DELETE_MMS */
+            });
 
     public static final OpsTemplate MEDIA_TEMPLATE = new OpsTemplate(
-            new int[] { AppOpsManager.OP_CAMERA,
-                    AppOpsManager.OP_RECORD_AUDIO },
-            new boolean[] { true,
-                    true }
-            );
+            new int[] {
+                    AppOpsManager.OP_CAMERA,
+                    AppOpsManager.OP_RECORD_AUDIO,
+            }, new boolean[] {
+                    true, /* OP_CAMERA */
+                    true, /* OP_RECORD_AUDIO */
+            });
 
     public static final OpsTemplate DEVICE_TEMPLATE = new OpsTemplate(
-            new int[] { AppOpsManager.OP_CALL_PHONE,
+            new int[] {
+                    AppOpsManager.OP_CALL_PHONE,
                     AppOpsManager.OP_WIFI_CHANGE,
                     AppOpsManager.OP_BLUETOOTH_CHANGE,
                     AppOpsManager.OP_NFC_CHANGE,
-                    AppOpsManager.OP_DATA_CONNECT_CHANGE },
-            new boolean[] { true,
-                    true,
-                    true,
-                    true,
-                    true }
-            );
+                    AppOpsManager.OP_DATA_CONNECT_CHANGE,
+            }, new boolean[] {
+                    true, /* OP_CALL_PHONE */
+                    true, /* OP_WIFI_CHANGE */
+                    true, /* OP_BLUETOOTH_CHANGE */
+                    true, /* OP_NFC_CHANGE */
+                    true, /* OP_DATA_CONNECT_CHANGE */
+            });
 
     public static final OpsTemplate BOOTUP_TEMPLATE = new OpsTemplate(
-            new int[] { AppOpsManager.OP_BOOT_COMPLETED },
-            new boolean[] { true, }
-            );
+            new int[] {
+                    AppOpsManager.OP_BOOT_COMPLETED,
+            }, new boolean[] {
+                    true, /* OP_BOOT_COMPLETED */
+            });
 
     public static final OpsTemplate[] ALL_TEMPLATES = new OpsTemplate[] {
             LOCATION_TEMPLATE, PERSONAL_TEMPLATE, MESSAGING_TEMPLATE,
