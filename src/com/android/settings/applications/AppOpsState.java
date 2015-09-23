@@ -269,7 +269,7 @@ public class AppOpsState {
                 return mIcon;
             }
 
-            return mState.mContext.getDrawable(
+            return mState.mContext.getResources().getDrawable(
                     android.R.drawable.sym_def_app_icon);
         }
 
