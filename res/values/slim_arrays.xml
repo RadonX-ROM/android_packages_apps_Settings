@@ -27,6 +27,18 @@
         <item>3</item>
     </string-array>
 
+    <string-array name="su_indicator_entries">
+        <item>@string/su_indicator_icon</item>
+        <item>@string/su_indicator_notification</item>
+        <item>@string/su_indicator_none</item>
+    </string-array>
+
+    <string-array name="su_indicator_values">
+        <item>1</item>
+        <item>2</item>
+        <item>0</item>
+    </string-array>
+
     <!-- App ops, extension of AOSP app_ops_summaries and app_ops_labels -->
     <string-array name="app_ops_summaries_cm" translatable="false">
         <item>@string/app_ops_summaries_coarse_location</item>
@@ -203,6 +215,13 @@
         <item>@string/volume_key_cursor_control_on_reverse</item>
     </string-array>
 
+    <!-- Advanced reboot menu dev options -->
+    <string-array name="advanced_reboot_entries">
+        <item>@string/advanced_reboot_disabled</item>
+        <item>@string/advanced_reboot_hide_on_keyguard</item>
+        <item>@string/advanced_reboot_show_always</item>
+    </string-array>
+
     <string-array name="volume_key_cursor_control_values" translatable="false">
         <item>0</item>
         <item>1</item>
@@ -331,6 +350,36 @@
         <item>@string/clock_date_format_custom</item>
     </string-array>
 
+    <string-array name="status_bar_battery_style_entries" translatable="false">
+        <item>@string/status_bar_battery_style_icon_portrait</item>
+        <item>@string/status_bar_battery_style_icon_landscape</item>
+        <item>@string/status_bar_battery_style_circle</item>
+        <item>@string/status_bar_battery_style_dotted_circle</item>
+        <item>@string/status_bar_battery_style_text</item>
+        <item>@string/status_bar_battery_style_hidden</item>
+    </string-array>
+
+    <string-array name="status_bar_battery_style_values" translatable="false">
+        <item>0</item>
+        <item>5</item>
+        <item>2</item>
+        <item>3</item>
+        <item>6</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="status_bar_battery_percentage_entries" translatable="false">
+        <item>@string/status_bar_battery_percentage_default</item>
+        <item>@string/status_bar_battery_percentage_text_inside</item>
+        <item>@string/status_bar_battery_percentage_text_next</item>
+    </string-array>
+
+    <string-array name="status_bar_battery_percentage_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <!-- Quick pulldown -->
     <string-array name="quick_pulldown_entries" translatable="false">
         <item>@string/quick_pulldown_off</item>
@@ -357,6 +406,19 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+    </string-array>
+
+    <!-- MediaScanner behavior on boot -->
+    <string-array name="media_scanner_on_boot_entries">
+        <item>@string/media_scanner_on_boot_enabled</item>
+        <item>@string/media_scanner_on_boot_ask</item>
+        <item>@string/media_scanner_on_boot_disabled</item>
+    </string-array>
+
+    <string-array name="media_scanner_on_boot_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 
     <!-- Icon type for lockscreen shorcut. -->
@@ -668,6 +730,13 @@
         <item>**null**</item>
     </string-array>
 
+    <!-- Random PIN lock view -->
+    <string-array name="lock_numpad_random_entries">
+        <item>@string/lock_numpad_random_off</item>
+        <item>@string/lock_numpad_random_always</item>
+        <item>@string/lock_numpad_random_on_request</item>
+    </string-array>
+
     <!-- Heads up -->
     <string-array name="heads_up_snooze_entries">
         <item>@string/disabled</item>
@@ -701,6 +770,12 @@
         <item>6000</item>
         <item>8000</item>
         <item>10000</item>
+    </string-array>
+
+    <string-array name="lock_numpad_random_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 
     <!-- HW Key Rebinding -->
@@ -751,15 +826,6 @@
     </string-array>
 
     <string-array name="lockscreen_shortcuts_launch_type_values" translatable="false">
-
-    <!-- Random PIN lock view -->
-    <string-array name="lock_numpad_random_entries">
-        <item>@string/lock_numpad_random_off</item>
-        <item>@string/lock_numpad_random_always</item>
-        <item>@string/lock_numpad_random_on_request</item>
-    </string-array>
-
-    <string-array name="lock_numpad_random_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
