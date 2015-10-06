@@ -201,14 +201,6 @@
         android:id="@+id/system_section"
         android:title="@string/header_category_system" >
 
-        <!-- AppOps -->
-        <dashboard-tile
-                android:id="@+id/app_ops_settings"
-                android:title="@string/app_ops_settings"
-                android:fragment="com.android.settings.applications.AppOpsSummary"
-                android:icon="@drawable/ic_settings_app_ops"
-                />
-
         <!-- Date & Time -->
         <dashboard-tile
                 android:id="@+id/date_time_settings"
@@ -232,6 +224,17 @@
                 android:fragment="com.android.settings.print.PrintSettingsFragment"
                 android:icon="@drawable/ic_settings_print"
                 />
+
+        <!-- Advanced Settings -->
+        <dashboard-tile
+            android:id="@+id/advanced_settings"
+            android:title="@string/advanced_settings_title"
+            android:icon="@drawable/ic_settings_advanced">
+            <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetClass="org.omnirom.device.DeviceSettings"
+                    android:targetPackage="org.omnirom.device" />
+        </dashboard-tile>
 
         <!-- Development -->
         <dashboard-tile
