@@ -95,10 +95,6 @@ public class QsSettings extends SettingsPreferenceFragment
     public void onResume() {
         super.onResume();
         int qsTileCount = QSTiles.determineTileCount(getActivity());
-        if (mQSTiles != null) {
-            mQSTiles.setSummary(getResources().getQuantityString(R.plurals.qs_tiles_summary,
-                        qsTileCount, qsTileCount));
-        }
     }
 
     @Override
